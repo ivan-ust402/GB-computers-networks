@@ -23,4 +23,5 @@ while True:
     for client in clients:
         if client == address:
             continue # Не отправлять данные клиенту, который их прислал
-        sock.sendto(data, address)
+        sock.sendto(data, client)
+
