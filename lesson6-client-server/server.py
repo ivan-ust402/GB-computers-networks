@@ -22,11 +22,10 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as stream:
     stream.bind((HOST, PORT))
     stream.listen()
     streamConnect, addrClient = stream.accept()
-    print(streamConnect)
     with streamConnect:
         print(f'Connected by {addrClient}')
         while True:
             data = streamConnect.recv(1024)
             if not data:
                 break
-            streamConnect.sendAll(data)
+            streamConnect.sendall(data)
