@@ -61,9 +61,9 @@ while True:
     t.start()
 
 # Закрываем клиентские сокеты
-# for csock in client_sockets:
-#     csock.close()
+for csock in client_sockets:
+    csock.close()
 # Закрываем сокет сервера
-# s.close()
+s.close()
 
 
