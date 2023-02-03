@@ -19,6 +19,7 @@ s.bind((SERVER_HOST, SERVER_PORT))
 s.listen(5)
 print(f"[*] Listening as {SERVER_HOST}:{SERVER_PORT}")
 
+
 def listen_for_client(cs):
     """
     Эта функция продолжает прослушивать сообщение из сокета "cs"
@@ -58,10 +59,11 @@ while True:
     t.daemon = True
     # Запускаем поток
     t.start()
-    # Закрываем клиентские сокеты
-    for cs in client_sockets:
-        cs.close()
-    # Закрываем сокет сервера
-    s.close()
+
+# Закрываем клиентские сокеты
+# for csock in client_sockets:
+#     csock.close()
+# Закрываем сокет сервера
+# s.close()
 
 
